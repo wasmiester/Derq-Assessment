@@ -39,7 +39,7 @@ describe("App Dashboard Integration", () => {
   it("see if data for dashboard loads correctly", async () => {
     render(<App />);
 
-    expect(screen.getByText("Traffic Analytics Dashboard")).toBeInTheDocument();
+    expect(screen.getByText("Traffic Dashboard")).toBeInTheDocument();
 
     await waitFor(() => {
       const calledUrls = mockFetch.mock.calls.map(([url]) => url);
