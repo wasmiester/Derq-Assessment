@@ -36,6 +36,7 @@ async function seedDatabase() {
       );
       process.exit(0);
     }
+    const users = faker.helpers.multiple(createRandomUser, { count: 100 });
     for (const user of users) {
       await con.query(
         "INSERT INTO traffic_metrics (country_code, vehicle_type, traffic_vol, rec_time) VALUES ($1, $2, $3, $4) ON CONFLICT DO NOTHING",
